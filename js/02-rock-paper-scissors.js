@@ -15,7 +15,6 @@ function getUserChoice() {
 const computerChoice = () => {
   randomNum = Math.floor(Math.random() * 3) + 1;
   let cpuChoice;
-  console.log(randomNum);
   if (randomNum === 1) {
     cpuChoice = "rock";
   } else if (randomNum === 2) {
@@ -25,3 +24,20 @@ const computerChoice = () => {
   }
   return cpuChoice;
 };
+const playGame = () => {
+  alert("Welcome to the Rock, Paper, Scissors Game!");
+  let user = getUserChoice();
+  let cpu = computerChoice();
+  if (cpu === user) {
+    alert(`You picked ${user} and the computer picked ${cpu} it's a TIE`);
+  } else if (
+    (user === "rock" && cpu === "paper") ||
+    (user === "paper" && cpu === "scissors") ||
+    (user === "scissors" && cpu === "rock")
+  ) {
+    alert(`You picked ${user} and the computer picked ${cpu} COMPUTER WINS`);
+  } else {
+    alert(`You picked ${user} and the computer picked ${cpu} YOU WIN!`);
+  }
+};
+playGame();
